@@ -46,60 +46,60 @@ public class Car {
 
     // Otros métodos (aún no implementados)
     public void accelerate() {
-        if (speedometer >= MAX_SPEED){
+        if (speedometer >= MAX_SPEED) {
             System.out.println("La velocidad no puede superar los 120Km/h");
-        }else{
+        } else {
 
             speedometer += 20;
         }
     }
 
     public void brake() {
-        if (speedometer<= 0){
+        if (speedometer <= 0) {
             System.out.println("No se puede frenar estando parado.");
-        }else{
-            speedometer-=20;
+        } else {
+            speedometer -= 20;
         }
     }
 
     public void turnAngleOfWheels(int angle) {
 
-        if (angle < -45){
+        if (angle < -45) {
             System.out.println("El angulo no puede ser menor a -45");
             this.wheelsAngle = -45;
-        }else if(angle >45){
+        } else if (angle > 45) {
             System.out.println("El angulo no puede ser mayor a 45");
             this.wheelsAngle = 45;
-        }else{
+        } else {
             this.wheelsAngle = angle;
 
         }
 
     }
 
-    public String showSteeringWheelDetail() {
-        return null;
-    }
+    //public String showSteeringWheelDetail() {
+    //  return null;
+    //}
 
-    public boolean isReverse() {
-        return reverse;
-    }
+ //   public boolean isReverse() {
+ //       return reverse;
+ //   }
 
     public void setReverse(boolean reverse) {
-        if (this.speedometer>0 && reverse){
+        if (this.speedometer > 0 && reverse) {
             System.out.println("No se puede poner la marcha atrás con el coche en movimiento");
-            this.gear="N";
-            this.reverse=false;
-        }else{
-            this.gear="R";
+            this.gear = "N";
+            this.reverse = false;
+        } else {
+            this.gear = "R";
             reverse = true;
 
         }
 
     }
 
-    public void showDetails() {
-    }
+    //public void showDetails() {
+    //}
 
     public boolean isTachometerEqualToZero() {
         return tachometer == 0;
@@ -115,7 +115,6 @@ public class Car {
         // Aquí se crearían objetos de tipo Car y se llamarían a sus métodos
 
         Car coche1 = new Car();
-        Car coche2 = new Car();
 
 
         //Se comprueba que el tacometro está en 0
@@ -159,14 +158,14 @@ public class Car {
 
         //Se comprueba que se reduzca la velocidad al frenar
         System.out.println("\u001B[33mComprobando frenado...\u001B[0m");
-        System.out.println("Velocidad inicial: "+coche1.speedometer);
+        System.out.println("Velocidad inicial: " + coche1.speedometer);
         coche1.brake();
-        System.out.println("Velocidad después de frenar: "+coche1.speedometer);
+        System.out.println("Velocidad después de frenar: " + coche1.speedometer);
         System.out.println("");
 
         //Se comprueba que no se pueda frenar por debajo de 0
         System.out.println("\u001B[33mComprobando frenado en negativo...\u001B[0m");
-        for (int i = 0; i<6; i++){
+        for (int i = 0; i < 6; i++) {
             coche1.brake();
         }
         System.out.println("");
